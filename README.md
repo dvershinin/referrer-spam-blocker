@@ -23,3 +23,10 @@ Add the following to each `/etc/nginx/site-available/example.com.conf` that need
       }
 ```
 
+Check NGINX configuration for error by running `nginx -t`. If all good, reload NGINX:
+
+```bash
+systemctl reload nginx
+```
+
+That's it. No more annoying spammers.
