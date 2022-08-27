@@ -9,7 +9,9 @@ This blocker uses the proper spam bocking technique (tm), which won't ruin your 
 
 Drop the file to an included directory, e.g. `/etc/nginx/conf.d`:
 
-curl -o referral-spam.conf URL
+```bash
+curl -o /etc/nginx/conf.d/referral-spam.conf https://raw.githubusercontent.com/dvershinin/referrer-spam-blocker/main/referral-spam.conf
+```
 
 Add the following to each `/etc/nginx/site-available/example.com.conf` that needs protection:
 
