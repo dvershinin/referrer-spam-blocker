@@ -30,3 +30,7 @@ systemctl reload nginx
 ```
 
 That's it. No more annoying spammers.
+
+## TODO
+
+Consider Moto list as more reputable https://github.com/matomo-org/referrer-spam-list
