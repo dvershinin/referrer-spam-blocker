@@ -13,14 +13,19 @@ Drop the file to an included directory, e.g. `/etc/nginx/conf.d`:
 curl -o /etc/nginx/conf.d/referral-spam.conf https://raw.githubusercontent.com/dvershinin/referrer-spam-blocker/main/referral-spam.conf
 ```
 
-Add the following to each `/etc/nginx/site-available/example.com.conf` that needs protection:
+Ensure increased hash bucket size, for NGINX to be able to work with larger maps. Create `/etc/nginx/conf.d/custom.conf` and specify:
 
 ```nginx
-      server {
-        if ($bad_referer) {
-          return 444;
-        }
-      }
+map_hash_bucket_size 128;
+```
+
+Add the following to each `/etc/nginx/site-available/example.com.conf` that needs protection. 
+Inside `server { }` block:
+
+```nginx
+if ($bad_referer) {
+    return 444;
+}
 ```
 
 Check NGINX configuration for error by running `nginx -t`. If all good, reload NGINX:
